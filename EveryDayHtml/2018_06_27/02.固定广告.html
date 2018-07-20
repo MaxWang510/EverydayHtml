@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .top{
+        width: 100%;
+        height: 44px;
+        background: url("images/top.png") no-repeat top center;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .box{
+        width: 1002px;
+        margin: 44px auto 0;
+    }
+
+    .ad-l, .ad-r{
+        position: fixed;
+        top: 100px;
+    }
+
+    .ad-r{
+        right: 0px;
+    }
+    </style>
+</head>
+<body>
+    <img src="images/ad-l.png" class="ad-l">
+    <img src="images/ad-r.png" class="ad-r">
+    <div class="top"></div>
+    <div class="box">
+        <img src="images/box.png">
+    </div>
+</body>
+</html>

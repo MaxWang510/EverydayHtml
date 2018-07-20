@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea>
+        hej dijisjoijdoijasoijiosjoi
+    </textarea>
+    <input type="button" value="请仔细阅读" disabled id="btn">
+
+    <script>
+        var time = 6;
+
+        var timerId = setInterval(function() {
+            time--;
+            document.getElementById("btn").value = "请仔细阅读" + time;
+            if (time <= 0) {
+                clearInterval(timerId);
+                document.getElementById("btn").disabled = false;
+                document.getElementById("btn").value = "同意";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

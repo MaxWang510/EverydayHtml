@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 200px;
+            background-color: green;
+            margin: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+
+    </div>
+    <input type="button" value="移动" id="btn">
+    <script>
+        document.getElementById("btn").onclick = function() {
+
+            var timerId = setInterval(function() {
+                var left = document.getElementById("div").offsetLeft;
+                left += 10;
+                if (left > 900) {
+                    clearInterval(timerId);
+                }
+                document.getElementById("div").style.left = left + "px";
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>

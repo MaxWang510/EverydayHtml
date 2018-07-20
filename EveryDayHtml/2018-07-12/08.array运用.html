@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [10, 30, 60, 40];
+        arr.forEach(function(ele, index) {
+            console.log(ele + "--------------" + index)
+        });
+
+
+        //返回查找到的元素的索引
+        var index = arr.indexOf(30);
+        console.log(index);
+
+
+        // 在数组中添加|
+        var newArr = arr.join("|");
+        console.log(newArr);
+
+        //map(函数) 数组中的每个元素都要执行函数，返回的结果重新组成一个新的数组
+
+
+        // 数组返转
+        console.log(arr.reverse());
+
+        // 数组排序
+        arr.sort(function(a, b) {
+            if (a < b) {
+                return 1;
+            } else if (a > b) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+        console.log("====数组排序===");
+        console.log(arr);
+    </script>
+</body>
+
+</html>

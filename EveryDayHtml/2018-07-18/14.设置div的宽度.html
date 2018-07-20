@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+            background-color: pink;
+            border-radius: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+    </div>
+    <input type="button" value="变大" id="btn">
+    <script>
+        var width = 200;
+        document.getElementById("btn").onclick = function() {
+            if (width > 900) {
+                width = 200;
+                document.getElementById("div").style.width = width + "px";
+            }
+            var timerId = setInterval(function() {
+                width += 10;
+                if (width > 900) {
+                    clearTimeout(timerId);
+                }
+                document.getElementById("div").style.width = width + "px";
+                console.log(width);
+            }, 100);
+
+        }
+    </script>
+</body>
+
+</html>

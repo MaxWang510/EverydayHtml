@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function animate(element, target) {
+            clearInterval(element.timeId);
+            element.timeId = setInterval(function() {
+                // 获取元素的当前位置
+                var current = element.offsetLeft; //数字类型
+                // 每次移动的位置
+                var step = 10;
+                step = current < target ? step : -step;
+                current += step;
+                if (Math.abs(current - target) > Math.abs(step)) {
+                    element.style.left = current + "px";
+                } else {
+                    clearInterval(element.timeId);
+                    element.style.left = target + "px";
+                }
+            }, 20);
+        }
+    </script>
+</body>
+
+</html>

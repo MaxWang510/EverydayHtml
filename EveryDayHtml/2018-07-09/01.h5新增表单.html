@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+        }
+
+        .box dl{
+            overflow: hidden;
+        }
+
+        .box dl dt,
+        .box dl dd {
+            float: left;
+        }
+
+        .box dl dt {
+            width: 100px;
+        }
+
+        .box dl dd {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <dl>
+            <dt>常住地</dt>
+            <dd>
+                <input type="text">
+            </dd>
+            <dd>* 注册后不可更改</dd>
+        </dl>
+    </div>
+</body>
+
+</html>

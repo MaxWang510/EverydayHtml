@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [5, 4, 3, 2, 1];
+
+        //循环控制比较的轮数
+        for (var i = 0; i < arr.length - 1; i++) {
+            //控制每一轮比较的次数
+            for (var j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    //交换位置
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        maopao([9, 3, 63, 35, 96, 156, 156, 3546, 123, 546, 355, 486]);
+
+        function maopao(arr) {
+            //控制轮数
+            for (var i = 0; i < arr.length; i++) {
+                //控制每一轮比较的次数
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] < arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            console.log(arr);
+        }
+    </script>
+</body>
+
+</html>

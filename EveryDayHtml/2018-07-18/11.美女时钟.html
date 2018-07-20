@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/meimei/00_00.jpg" id="im">
+    <script>
+        function f1() {
+            var dt = new Date();
+            // 获取小时
+            var hour = dt.getHours();
+            var second = dt.getSeconds();
+
+            hour = hour < 10 ? "0" + hour : hour;
+            second = second < 10 ? "0" + second : second;
+            document.getElementById("im").src = "images/meimei/" + hour + "_" + second + ".jpg"
+        }
+        f1();
+        setInterval(f1, 1000);
+    </script>
+</body>
+
+</html>

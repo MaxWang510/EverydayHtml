@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(String(100));
+        //类型转换
+
+        // 转化成整数
+        console.log(parseInt("1.000"));
+        console.log(parseFloat("10.032656"));
+
+        //  ++ --
+        // 如果++在后面  先参与运算，运算结束后自身在+1
+        // 如果++在前面，先自身+1 ，然后再参与运算
+
+        var year = 2018;
+
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            console.log("是闰年");
+        } else {
+            console.log("平年");
+        }
+
+        var i = 0;
+        var sum = 0;
+        while (i <= 100) {
+            if (i % 2 == 0) {
+                sum += i;
+            }
+            i++;
+        }
+        console.log("所有偶数的和" + sum);
+
+
+        // 被7整除
+        var i = 1;
+        while (i <= 100) {
+            if (i % 7 == 0) {
+                console.log(i);
+            }
+            i++;
+        }
+
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write(j + "*" + i + "=" + i * j + "         ");
+            }
+            document.write("<br/>");
+        }
+
+        var num1 = 1;
+        var num2 = 1;
+        var sum = 0;
+        console.log("==================");
+        console.log(num1);
+        console.log(num2);
+        for (var i = 3; i <= 12; i++) {
+            sum = num1 + num2;
+            num1 = num2;
+            num2 = sum;
+            console.log(sum);
+        }
+
+        // 求数组中最大的值
+        var arr = [10, 22, 43, 24, 56, 26, 57];
+        var max = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        console.log("最大值：" + max);
+    </script>
+</body>
+
+</html>

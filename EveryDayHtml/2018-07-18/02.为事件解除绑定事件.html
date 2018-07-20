@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+    <input type="button" value="解除前面的一个事件" id="btn2">
+
+    <script>
+        //解绑事件:
+        /*
+         * 注意:用什么方式绑定事件,就应该用对应的方式解绑事件
+         * 1.解绑事件
+         * 对象.on事件名字=事件处理函数--->绑定事件
+         * 对象.on事件名字=null;
+         * 2.解绑事件
+         * 对象.addEventListener("没有on的事件类型",命名函数,false);---绑定事件
+         * 对象.removeEventListener("没有on的事件类型",函数名字,false);
+         * 3.解绑事件
+         * 对象.attachEvent("on事件类型",命名函数);---绑定事件
+         * 对象.detachEvent("on事件类型",函数名字);
+         *
+         *
+         * */
+
+
+
+        // document.getElementById("btn").onclick = function() {
+        //     console.log("事件一");
+        // };
+
+        // document.getElementById("btn2").onclick = function() {
+        //     document.getElementById("btn").onclick = null;
+        // }
+
+        function f1() {
+            console.log("事件一");
+        }
+
+        document.getElementById("btn").addEventListener("click", f1, false);
+
+        document.getElementById("btn2").addEventListener("click", function() {
+            document.getElementById("btn").removeEventListener("click", f1, false);
+        }, false);
+    </script>
+</body>
+
+</html>

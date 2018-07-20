@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn">
+    <script>
+        // 为同一个元素绑定多个不同的事件，指向同一个事件处理函数
+        document.getElementById("btn").onclick = f1;
+        document.getElementById("btn").onmouseover = f1;
+        document.getElementById("btn").onmouseout = f1;
+
+        function f1(e) {
+            switch (e.type) {
+                case "click":
+                    this.style.backgroundColor = "red";
+                    break;
+                case "mouseover":
+                    this.style.backgroundColor = "green";
+                    break;
+                case "mouseout":
+                    this.style.backgroundColor = "yellow";
+                    break;
+            }
+        }
+        // // 事件参数对象 e
+        // document.getElementById("btn").onclick = function(e) {
+        //     console.log(e);
+        // }
+    </script>
+</body>
+
+</html>

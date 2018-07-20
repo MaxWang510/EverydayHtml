@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="停止" id="btn">
+    <script>
+        // 参数1：函数  参数2：时间 
+        var timeId = setInterval(function() {
+            console.log("hahaha");
+        }, 1000);
+
+        document.getElementById("btn").onclick = function() {
+            // 清除定时器 参数:清除定时器的id的值
+            clearInterval(timeId);
+        }
+    </script>
+</body>
+
+</html>
