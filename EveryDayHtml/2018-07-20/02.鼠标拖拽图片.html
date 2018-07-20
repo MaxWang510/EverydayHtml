@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            border: 1px solid red;
+            position: absolute;
+            margin: 100px;
+        }
+        
+        img {
+            padding-top: 30px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="images/bird.png">
+    </div>
+
+    <script>
+        document.getElementById("box").onmousedown = function(e) {
+            //获取此时的可视区域的横坐标-此时div距离左侧页面的横坐标
+            var spaceX = e.clientX - document.getElementById("box").offsetLeft;
+            var spaceY = e.clientY - document.getElementById("box").offsetTop;
+
+            //移动事件
+            document.onmousemove = function(e) {
+                //新的可视区域横坐标 - spaceX  = div的left值
+                var x = e.clientX - spaceX - 100;
+                var y = e.clientY - spaceY - 100;
+                document.getElementById("box").style.left = x + "px";
+                document.getElementById("box").style.top = y + "px";
+            }
+        }
+
+        document.onmouseup = function() {
+            document.onmousemove = null;
+        }
+    </script>
+</body>
+
+</html>

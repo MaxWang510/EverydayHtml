@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/bird.png" id="img">
+    <script>
+        var evt = {
+            getEvent: function(e) {
+                return window.event || e;
+            },
+            getClientX: function(e) {
+                return this.getEvent(e).clientX;
+            },
+            getClientY: function(e) {
+                return this.getEvent(e).clientY;
+            }
+        }
+
+        document.onmousemove = function(e) {
+            document.getElementById("img").style.left = evt.getClientX(e) + "px";
+            document.getElementById("img").style.top = evt.getClientY(e) + "px";
+        }
+    </script>
+</body>
+
+</html>

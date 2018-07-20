@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery图片放大镜插件lightzoom.js</title>
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <!--CSS RESET-->
+
+    <!--演示页面样式，使用时可以不引用-->
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+
+    <link href="css/glassstyle.css" rel="stylesheet">
+    <style type="text/css">
+        .content img {
+            display: block;
+            margin: 20px auto;
+        }
+        
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <h3 class="center">gif图片</h3>
+        <img src="images/2.gif" class="light-zoom" width="350" height="189" alt="">
+        <br>
+        <h3 class="center">PNG图片</h3>
+        <img class="light-zoom" width="609px" height="297px" src="images/adobe_text_rendering.png">
+        <img class="light-zoom" width="609px" height="297px" src="images/bird.png">
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/lightzoom.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('img.light-zoom').lightzoom({
+                zoomPower: 3, //Default
+                glassSize: 180, //Default
+            });
+        });
+    </script>
+
+</body>
+
+</html>
