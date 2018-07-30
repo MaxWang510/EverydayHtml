@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 深拷贝：把一个对象的所有属性或者方法，一个一个肇东，并且在另外一个对象中开辟相应的空间，一个一个存储扫另一个对象中
+        var obj1 = {
+            age: 10,
+            sex: "男",
+            car: ["奔驰", "宝马", "特斯拉", "大众"],
+            dog: {
+                name: "大黄",
+                age: 5,
+                color: "黄色"
+            }
+        }
+
+        var obj2 = {};
+
+        function extend(a, b) {
+            for (var key in a) {
+                var item = a[key];
+                if (item instanceof Array) {
+                    b[key] = [];
+                    extend(item, b[key]);
+                } else if (item instanceof Object) {
+                    b[key] = {};
+                    extend(item, b[key]);
+                } else {
+                    b[key] = item;
+                }
+            }
+        }
+
+        extend(obj1, obj2);
+        console.log(obj1);
+        console.log(obj2);
+    </script>
+
+</body>
+
+</html>
